@@ -16,7 +16,6 @@ public class Cadastrar extends HttpServlet {
         response.setContentType("text/html");
         request.setCharacterEncoding("utf-8");
         String nome=request.getParameter("nome");
-        String telefone=request.getParameter("telefone");
         String login=request.getParameter("login");
         String senha=request.getParameter("senha");
            PrintWriter out = response.getWriter();
@@ -27,10 +26,10 @@ public class Cadastrar extends HttpServlet {
                Usuario u=(Usuario) sessao.getAttribute("usuario");
                out.print("<h2>Seja bem vindo "+u.getNome()+"</h2>");
            }
-        if(nome!=null && nome.length()>0 && telefone!=null && telefone.length()>0 &&
+        if(nome!=null && nome.length()>0 &&
             login!=null && login.length()>0 && senha!=null && senha.length()>0){
 
-                Usuario u=new Usuario(proximoSerial(),nome,telefone,login,senha);
+                Usuario u=new Usuario(proximoSerial(),nome,login,senha);
 
                 Set<Usuario> usuarios=(Set<Usuario>)getServletContext().getAttribute("usuarios");
                 if(usuarios.add(u))

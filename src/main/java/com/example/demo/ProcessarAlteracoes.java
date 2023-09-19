@@ -17,7 +17,6 @@ public class ProcessarAlteracoes extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String novoNome = (String) req.getParameter("nome");
-        String novoTelefone = (String) req.getParameter("telefone");
         PrintWriter out = resp.getWriter();
         String novoLogin = req.getParameter("login");
         String novaSenha = req.getParameter("senha");
@@ -36,9 +35,6 @@ public class ProcessarAlteracoes extends HttpServlet {
                 u.setSenha(novaSenha);
             }
 
-            if(novoTelefone!=null && !novoTelefone.isEmpty()){
-                u.setTelefone(novoTelefone);
-            }
             out.print("<script>function alertar(){alert('Alterações realizadas');" +
                     " window.location.href = 'relatorio'"+
                     "}</script>");

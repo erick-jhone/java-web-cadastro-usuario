@@ -25,8 +25,6 @@ public class Editar extends HttpServlet {
                     "    <label>Nome\n" +
                     "        <input type=\"text\" name=\"nome\">\n" +
                     "    </label>\n" +
-                    "    <label>Telefone\n" +
-                    "      <input type=\"text\" name=\"telefone\">\n" +
                     "    </label>\n" +
                     "    <label>Login\n" +
                     "      <input type=\"text\" name=\"login\">\n" +
